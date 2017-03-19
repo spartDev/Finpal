@@ -1,6 +1,8 @@
 import React, { PropTypes } from 'react';
 
-import { applicationHeader } from '../../config';
+import { Header } from '../../components';
+
+import styles from './styles.scss';
 
 /**
  * Layout
@@ -13,8 +15,10 @@ import { applicationHeader } from '../../config';
  */
 
 const Layout = ({ children }) => (
-  <div style={{ height: '100%' }}>
-    <main role="main" style={{ height: '100%' }}>
+  <div className={styles.layout}>
+    <Header className={styles.layout__header} />
+    <main role="main" className={styles.layout__main} style={{ height: '100%' }}>
+      <header className={styles.layout__main__header} />
       {children}
     </main>
   </div>

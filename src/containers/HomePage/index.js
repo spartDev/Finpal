@@ -14,7 +14,7 @@ import styles from './styles.scss';
 
 const HomePage = () => (
   <div className={styles.homePage}>
-    <h1>Finpal development</h1>
+    <h1>Home</h1>
   </div>
  );
 

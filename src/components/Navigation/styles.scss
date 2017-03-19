@@ -1,0 +1,41 @@
+/*  NAVIGATION COMPONENT
+--------------------------------------------------- */
+
+/* IMPORT
+--------------------------------------------------- */
+@import "../../../public/stylesheet/_settings";
+
+.navigation {
+  display: flex;
+  flex-direction: column;
+
+  &__section {
+    padding: 2rem 0 4rem 5rem;
+    border-bottom: 1px solid hsl(219, 12%, 33%);
+    list-style-type: none;
+
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
+
+  &__link {
+    color: hsl(214, 8%, 59%);
+    padding: 1rem 0;
+    display: block;
+    transition: color 250ms;
+
+    &:hover {
+      color: lighten(hsl(214, 8%, 59%), 10%);
+    }
+  }
+
+  &__button {
+    padding: 1.4rem 3rem;
+    background: transparent;
+    color: hsl(200, 31%, 69%);
+    border: 1px solid hsl(200, 31%, 69%);
+    border-radius: 1rem;
+    margin: 2rem;
+  }
+}
