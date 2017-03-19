@@ -1,0 +1,15 @@
+{
+  "ecmaVersion": 7,
+  "libs": [
+    "browser",
+    "chai"
+  ],
+  "plugins": {
+    "node": {
+      "dontLoad": "",
+      "load": "",
+      "modules": ""
+    },
+    "es_modules": {}
+  }
+}

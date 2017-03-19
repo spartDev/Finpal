@@ -1,0 +1,13 @@
+{
+  "ignore": [
+    ".git"
+  ],
+  "watch": [
+    "index.js",
+    "webpack/",
+    "src/server.js"
+  ],
+  "env": {
+    "NODE_ENV": "development"
+  }
+}

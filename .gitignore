@@ -1,0 +1,30 @@
+# Dependency directory
+
+# General
+.idea
+.DS_Store
+*~
+.sass-cache
+.node-version
+.env
+.development
+.production
+coverage/
+report/
+
+# Package control
+node_modules/
+
+# Logs
+npm-debug.log
+npm-debug.log.*
+
+watch-it/
+
+webpack-assets.json
+
+# Release
+dist/
+
+#tmp
+tmp-*

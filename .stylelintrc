@@ -1,0 +1,11 @@
+{
+  "extends": "stylelint-config-spartdev",
+  "plugins": [
+    "stylelint-scss"
+  ],
+  "rules": {
+    "selector-pseudo-class-no-unknown": [ true, {
+      ignorePseudoClasses: ["global"],
+    }]
+  }
+}
