@@ -1,3 +1,4 @@
+import fetch from 'isomorphic-fetch';
 import * as ACTION from './actionsTypes';
 
  /**
@@ -9,16 +10,28 @@ export const transactionStart = () => ({
   asyncStatus: 'PENDING',
 });
 
-export const transactionSuccess = (result) => ({
+export const transactionSuccess = result => ({
   type: ACTION.TRANSACTIONS_SUCCESS,
   asyncStatus: 'SUCCESS',
-  payload: result,
+  payload: result.transactions,
 });
 
 export const transactionFailure = result => ({
   type: ACTION.TRANSACTIONS_ERROR,
   asyncStatus: 'FAILURE',
   payload: result,
+});
+
+export const transactionSortedBy = (filter, direction) => ({
+  type: ACTION.TRANSACTIONS_SORT,
+  direction,
+  filter,
+});
+
+export const transactionSelected = (id, isActive) => ({
+  type: ACTION.TRANSACTIONS_SELECTED,
+  id,
+  isActive,
 });
 
 export const transactions = () => async dispatch => {

@@ -1,0 +1,37 @@
+/*  ASIDE COMPONENT
+--------------------------------------------------- */
+
+/* IMPORT
+--------------------------------------------------- */
+@import "../../../public/stylesheet/_settings";
+
+.aside {
+  width: 30rem;
+  transition: width 300ms;
+  background: hsl(0, 0%, 100%);
+
+  &__header {
+    height: 7.5rem;
+
+    /* Need this color */
+    /* stylelint-disable-next-line no-indistinguishable-colors */
+    background: hsl(0, 0%, 96%);
+  }
+
+  &__body {
+    padding: 2rem;
+  }
+
+  &__img {
+    width: 100%;
+    margin-top: .5rem;
+  }
+
+  &__message {
+    display: flex;
+    align-items: center;
+    height: calc(100% - 75px);
+    color: hsl(0, 0%, 58%);
+    text-align: center;
+  }
+}

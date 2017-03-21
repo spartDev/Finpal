@@ -1,3 +1,4 @@
+import { orderBy } from 'lodash';
 import * as ACTION from '../../containers/TransactionsPage/actionsTypes';
 
 const InitialState = {
@@ -25,6 +26,23 @@ export const transactionsReducer = (state = InitialState, action = {}) => {
         ...state,
         asyncStatus: action.asyncStatus,
         payload: action.payload,
+      };
+    }
+    case ACTION.TRANSACTIONS_SORT: {
+      return {
+        ...state,
+        direction: action.direction,
+        payload: orderBy(state.payload, [action.filter], [action.direction]),
+      };
+    }
+    case ACTION.TRANSACTIONS_SELECTED: {
+      return {
+        ...state,
+        isActive: action.isActive,
+        // TODO: Refactor this
+        // We need to substract action id from -1
+        // to match payload index
+        selected: state.payload[(action.id - 1)],
       };
     }
 

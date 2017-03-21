@@ -1,5 +1,5 @@
 /*  BASE SETTINGS
----------------------------------------------------*/
+--------------------------------------------------- */
 
 // FONTS
 // -----------------------------------------------------------
@@ -7,7 +7,7 @@ $semi-bold: 600 !default;
 $regular: 400 !default;
 $light: 300 !default;
 
-/* Font stack of the site.*/
+/* Font stack of the site. */
 $base-font-family: arial !default;
 $base-font-weight: $regular !default;
 $base-font-style: normal !default;
@@ -30,13 +30,10 @@ $color-link-default-hover: $color-body-text !default;
 
 $background-default: $default-color !default;
 
-
-
 // Size settings
 // -----------------------------------------------------------
 $header-height: 6rem !default;
 $global-radius: 5px;
-
 
 // Z-Index Scale
 // --------------------------------------------------

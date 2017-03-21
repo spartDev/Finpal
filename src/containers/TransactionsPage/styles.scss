@@ -8,6 +8,41 @@
 .transactionsPage {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  height: calc(100vh - 7.5rem);
+  padding: 5rem 10rem 0;
+  overflow: scroll;
+
+  &__header {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2.7rem 0;
+    border-bottom: 1px solid hsl(0, 0%, 82%);
+    cursor: pointer;
+
+    &:first-child {
+      border-bottom: 1px solid $black;
+
+      &:hover {
+        background: none;
+      }
+
+    }
+
+    &:hover {
+      background: hsl(0, 0%, 93%);
+    }
+
+  }
+
+  &__headerDate,
+  &__headerName,
+  &__headerOperation {
+    flex: 3;
+  }
+
+  &__headerAmount {
+    flex: 2;
+  }
 }
