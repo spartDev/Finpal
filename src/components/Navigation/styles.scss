@@ -20,10 +20,10 @@
   }
 
   &__link {
-    color: hsl(214, 8%, 59%);
-    padding: 1rem 0;
     display: block;
+    padding: 1rem 0;
     transition: color 250ms;
+    color: hsl(214, 8%, 59%);
 
     &:hover {
       color: lighten(hsl(214, 8%, 59%), 10%);
@@ -31,11 +31,17 @@
   }
 
   &__button {
+    margin: 2rem;
     padding: 1.4rem 3rem;
-    background: transparent;
-    color: hsl(200, 31%, 69%);
+    transition: background 250ms;
     border: 1px solid hsl(200, 31%, 69%);
     border-radius: 1rem;
-    margin: 2rem;
+    background: hsl(216, 10%, 28%);
+    color: hsl(200, 31%, 69%);
+
+    &:hover {
+      background: hsl(200, 31%, 69%);
+      color: hsl(216, 10%, 28%);
+    }
   }
 }

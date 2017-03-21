@@ -1,5 +1,4 @@
 import React from 'react';
-import classnames from 'classnames';
 import { Link } from 'react-router';
 
 import styles from './styles.scss';
@@ -15,37 +14,41 @@ const Navigation = () => (
   <nav className={styles.navigation} role="navigation">
     <ul className={styles.navigation__section}>
       <li className={styles.navigation__item}>
-        <a href='' className={styles.navigation__link}>Overwiew</a>
+        <Link to="/" className={styles.navigation__link}>
+          Overwiew
+        </Link>
       </li>
       <li className={styles.navigation__item}>
-        <Link to='transactions' className={styles.navigation__link}>Transactions (3)</Link>
-      </li>
-    </ul>
-    <ul className={styles.navigation__section}>
-      <li className={styles.navigation__item}>
-        <a href='' className={styles.navigation__link}>Transferts (2)</a>
-      </li>
-      <li className={styles.navigation__item}>
-        <a href='' className={styles.navigation__link}>Invoices (1)</a>
+        <Link to="transactions" className={styles.navigation__link}>
+          Transactions (3)
+        </Link>
       </li>
     </ul>
     <ul className={styles.navigation__section}>
       <li className={styles.navigation__item}>
-        <a href='' className={styles.navigation__link}>Manage cards</a>
+        <a href className={styles.navigation__link}>Transferts (2)</a>
       </li>
       <li className={styles.navigation__item}>
-        <a href='' className={styles.navigation__link}>Manage accounts</a>
+        <a href className={styles.navigation__link}>Invoices (1)</a>
       </li>
     </ul>
     <ul className={styles.navigation__section}>
       <li className={styles.navigation__item}>
-        <a href='' className={styles.navigation__link}>Team</a>
+        <a href className={styles.navigation__link}>Manage cards</a>
       </li>
       <li className={styles.navigation__item}>
-        <a href='' className={styles.navigation__link}>Integrations</a>
+        <a href className={styles.navigation__link}>Manage accounts</a>
+      </li>
+    </ul>
+    <ul className={styles.navigation__section}>
+      <li className={styles.navigation__item}>
+        <a href className={styles.navigation__link}>Team</a>
       </li>
       <li className={styles.navigation__item}>
-        <a href='' className={styles.navigation__link}>Settings</a>
+        <a href className={styles.navigation__link}>Integrations</a>
+      </li>
+      <li className={styles.navigation__item}>
+        <a href className={styles.navigation__link}>Settings</a>
       </li>
     </ul>
     <button className={styles.navigation__button}>Upgrade account</button>
