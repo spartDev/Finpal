@@ -6,7 +6,7 @@ import {
   HomePage,
   Layout,
   NotFoundPage,
-  TransactionsPage
+  TransactionsPage,
 } from '../containers';
 
 const routes = () => (
