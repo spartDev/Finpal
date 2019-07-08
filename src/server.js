@@ -11,7 +11,7 @@ import { createServer } from 'http';
 import chalk from 'chalk';
 import helmet from 'helmet';
 import Express from 'express';
-import favicon from 'serve-favicon';
+// import favicon from 'serve-favicon';
 import bodyParser from 'body-parser';
 import compression from 'compression';
 import PrettyError from 'pretty-error';
@@ -47,7 +47,7 @@ if (__DEVELOPMENT__) {
   app.use(Express.static(PUBLIC_PATH, { maxAge: ONE_YEAR }));
 }
 // @TODO Add favicon
-//app.use(favicon(path.join(__dirname, '..', 'public', 'images', 'favicon.ico')));
+// app.use(favicon(path.join(__dirname, '..', 'public', 'images', 'favicon.ico')));
 
 // Secure the server against common attacks
 app.use(helmet());
@@ -82,6 +82,14 @@ app.use((req, res) => {
     webpackIsomorphicTools.refresh();
   }
 
+  function fetchComponentData(props) {
+    const { query, params } = props;
+    const rootComp = props.components[props.components.length - 1].WrappedComponent;
+    const fetchRootComp = rootComp ? rootComp.fetchData({ query, params, store, history, location }) : Promise.resolve();
+
+    return fetchRootComp;
+  }
+
   function hydrateOnClient() {
     /* eslint-disable */
     res.status(200).send('<!doctype html>\n' +
@@ -105,15 +113,19 @@ app.use((req, res) => {
       res.status(500).send(error.message);
       hydrateOnClient();
     } else if (renderProps) {
-      const component = (
-        <Provider store={store} key="provider">
-          <RouterContext {...renderProps} />
-        </Provider>
-      );
+      // We need to fetch the data of the root component
+      // Load data, then render the Redux initial state into the server markup
+      fetchComponentData(renderProps).then(() => {
+        const component = (
+          <Provider store={store} key="provider">
+            <RouterContext {...renderProps} />
+          </Provider>
+        );
 
-      res.status(200);
+        res.status(200);
 
-      res.send(`<!doctype html>\n ${ReactDOM.renderToString(<Html assets={webpackIsomorphicTools.assets()} component={component} store={store} />)}`);
+        res.send(`<!doctype html>\n ${ReactDOM.renderToString(<Html assets={webpackIsomorphicTools.assets()} component={component} store={store} />)}`);
+      });
     } else {
       // no route match, so 404. In a real app you might render a custom
       // 404 view here

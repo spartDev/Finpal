@@ -1,0 +1,55 @@
+/*  LAYOUT CINTAINER
+--------------------------------------------------- */
+
+/* IMPORT
+--------------------------------------------------- */
+@import "../../../public/stylesheet/_settings";
+
+.layout {
+  display: flex;
+  min-height: 100%;
+  background: hsl(0, 0%, 96%);
+
+  &__header {
+    min-width: 22.4rem;
+  }
+
+  &__main {
+    flex: 1;
+
+    &__header {
+      height: 7.5rem;
+      background: hsl(40, 74%, 59%);
+    }
+  }
+
+  &__aside {
+    width: 0;
+    transition: width 300ms;
+
+    /* Need this color */
+    /* stylelint-disable-next-line no-indistinguishable-colors */
+    background: hsl(0, 0%, 100%);
+
+    &--isActive {
+      width: 30rem;
+    }
+
+    &__header {
+      height: 7.5rem;
+
+      /* Need this color */
+      /* stylelint-disable-next-line no-indistinguishable-colors */
+      background: hsl(0, 0%, 96%);
+    }
+
+    &__body {
+      padding: 2rem;
+    }
+
+    &__img {
+      width: 100%;
+      margin-top: .5rem;
+    }
+  }
+}

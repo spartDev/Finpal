@@ -1,0 +1,32 @@
+/*  ROW COMPONENT
+--------------------------------------------------- */
+
+/* IMPORT
+--------------------------------------------------- */
+@import "../../../public/stylesheet/_settings";
+
+.row {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2.7rem 0;
+  transition: background 250ms;
+  border-bottom: 1px solid hsl(0, 0%, 58%);
+  cursor: pointer;
+
+  &__date,
+  &__name,
+  &__type {
+    flex: 3;
+  }
+
+  &__amount {
+    flex: 2;
+  }
+
+  &__isActive,
+  &:hover {
+    background: hsl(0, 0%, 93%);
+  }
+}
